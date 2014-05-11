@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Garden Design App</title>
+		<link rel="stylesheet" href="css/app.css">
+		<script  src="js/app.min.js"></script>
+</head>
+
+<body>
+	<div id="texture-list">
+		<ul class="dropdown">
+			<li><div class="sprite-grassicon01"></div></li>
+			<li><div class="sprite-grassicon02"></div></li>
+			<li><div class="sprite-grassicon03"></div></li>
+			<li><div class="sprite-grassicon04"></div></li>
+			<li><div class="sprite-grassicon05"></div></li>
+		</ul>
+		<ul>
+			<li><div class="sprite-sandicon01"></div></li>
+			<li><div class="sprite-sandicon02"></div></li>
+			<li><div class="sprite-sandicon03"></div></li>
+		</ul>
+		<ul>
+			<li><div class="sprite-stoneicon01"></div></li>
+			<li><div class="sprite-stoneicon02"></div></li>
+			<li><div class="sprite-stoneicon03"></div></li>
+			<li><div class="sprite-stoneicon04"></div></li>
+		</ul>
+	</div>
+
+	<div id="content">
+		<!-- <Боковая панель -->
+		<div id="sidebar">
+			<!-- Меню боковой панели-->
+			<section class="ac-container">
+				<div>
+					<input id="ac-1" name="accordion-1" type="radio">
+					<label for="ac-1" class="icon-sidebar icon-build">Строения</label>
+					<article class="ac-medium">
+						<div class="object-container">
+							<p class="label"> Дом </p>
+							<div id="house" class="object object-house"></div>
+						</div>
+						<div class="object-container">
+							<p class="label"> Бассейн </p>
+							<div id="pool" class="object object-pool"></div>
+						</div>
+					  <div class="object-container">
+					  	<p class="label"> Вертикальная Стена </p>
+					  	<div id="verticalWall" class="object"></div>
+					  </div>
+					  <div class="object-container">
+						  <p class="label"> Горизонтальная Стена </p>
+					  	<div id="horizontalWall" class="object"></div>
+					  </div>
+					</article>
+				</div>
+				<div>
+					<input id="ac-2" name="accordion-1" type="radio">
+					<label for="ac-2" class="icon-sidebar icon-tree">Растения</label>
+					<article class="ac-large">
+						<div class="object-container">
+							<p class="label"> Дерево </p>
+							<div id="tree" class="object object-tree"></div>
+						</div>
+						<div class="object-container">
+							<p class="label"> ... </p>
+							<div id="chirstmasTree" class="object"></div>
+						</div>
+						<div class="object-container">
+							<p class="label"> Фруктовое дерево </p>
+							<div id="fruitTree" class="object object-fruittree"></div>
+						</div>
+						<div class="object-container">
+							<p class="label"> Цветущее дерево </p>
+							<div id="floweringTree" class="object object-floweringtree"></div>
+						</div>
+						<div class="object-container">
+							<p class="label"> Цветы </p>
+							<div id="flower1" class="object object-flower1"></div>
+						</div>
+						<div class="object-container">
+							<p class="label"> Куст </p>
+							<div id="shrub1" class="object object-shrub1"></div>
+						</div>
+						<div class="object-container">
+							<p class="label"> Куст </p>
+							<div id="shrub2" class="object object-shrub2"></div>
+						</div>
+					</article>
+				</div>
+				<div>
+					<input id="ac-3" name="accordion-1" type="radio">
+					<label for="ac-3" class="icon-sidebar icon-car">Транспорт</label>
+					<article class="ac-small">
+						<div class="object-container">						
+							<p class="label"> Машина </p>
+					  	<div id="car" class="object object-car"></div>
+						</div>
+					</article>
+				</div>
+				<div>
+					<input id="ac-4" name="accordion-1" type="radio">
+					<label for="ac-4" class="icon-sidebar icon-others">Прочее</label>
+					<article class="ac-small">
+						<div class="object-container">
+				  		<p class="label"> Садовый стол </p>
+				  		<div id="gardenTable" class="object"></div>
+						</div>
+						<div class="object-container">
+							<p class="label"> Скамейка </p>
+				  		<div id="gardenBench" class="object"></div>
+						</div>
+					</article>
+				</div>
+			</section>
+		</div>
+
+		<div id="wrapper">
+		<!-- Верхнее меню -->
+			<div id="menuBar">
+			  <div id="buttons">
+			  	<button class="btn btn-1 btn-1a icon icon-create tooltip" 
+			  		id="drawFence" title="Создать прямоугольный участок">
+		  			<span class="textLabel"><!-- Создать --></span>
+			  	</button>
+			  	<button class="btn btn-1 btn-1a icon icon-delete tooltip" 
+			  		id="delete" title="Удалить выделеные объекты">
+		  			<span class="textLabel"><!-- Удалить --></span>
+			  	</button>
+			  	<button class="btn btn-1 btn-1a icon icon-change tooltip" 
+			  		id="changeTexture" title="Сменить текстуру">
+		  			<span class="textLabel"><!-- Изменить --></span>
+	  			</button>
+			  	<button class="btn btn-1 btn-1a icon icon-rotateLeft tooltip" 
+			  		id="rotateLeft" title=" Повернуть влево на 45*">
+		  			<span class="textLabel"><!-- Влево --></span>
+	  			</button>
+			  	<button class="btn btn-1 btn-1a icon icon-rotateRight tooltip" 
+			  		id="rotateRight" title="Повернуть вправо на 45*">
+		  			<span class="textLabel"><!-- Вправо --></span>
+	  			</button>
+			  	<button class="btn btn-1 btn-1a icon icon-moveUp tooltip" 
+			  		id="moveUp" title=" Передвинуть на уровень вверх">
+		  			<span class="textLabel"></span>
+	  			</button>
+			  	<button class="btn btn-1 btn-1a icon icon-moveDown tooltip" 
+			  		id="moveDown" title="Передвинуть на уровень вниз">
+		  			<span class="textLabel"></span>
+	  			</button>
+			  	<button class="btn btn-1 btn-1a icon icon-save tooltip" 
+			  		id="saveImage" title="Сохранить">
+		  			<span class="textLabel"><!-- CОХРАНИТЬ --></span>
+	  			</button>
+			  </div>
+			</div>
+			
+			<!-- Контейнер, содержащий элемент canvas -->
+			<div id="container"></div>
+		</div>
+	</div>
+</body>
+</html>

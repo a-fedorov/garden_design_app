@@ -42,9 +42,9 @@ function init(){
 	$('#moveUp').on('click', function(){ app.moveObjectUp(); })
 	$('#moveDown').on('click', function(){ app.moveObjectDown(); })
 	$('#saveImage').on('click', function(event){ 
-		// var $progress = $('#progressDialog');
-		// var left = $progress.offset().left + 220;
-		// $progress.css({ left: left + 'px', display: 'block' });
+		var $progress = $('#progressDialog');
+		var left = $progress.offset().left + 220;
+		$progress.css({ left: left + 'px', display: 'block' });
 		
 		app.saveImage(); 
 	}).css({float: 'right'});
@@ -171,7 +171,7 @@ App.GardenDesigner = function(){
 			tree: 'images/tree.gif',
 			fruitTree: 'images/fruitTree.gif',
 			floweringTree: 'images/floweringTree.gif',
-			chirstmasTree: 'images/chirstmasTree.gif',
+			// chirstmasTree: 'images/chirstmasTree.gif',
 			house1: 'images/housePlan01.png',
 			house2: 'images/housePlan02.png',
 			house3: 'images/housePlan03.png',

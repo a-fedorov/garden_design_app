@@ -175,7 +175,7 @@ App.GardenDesigner = function(){
 			house1: 'images/housePlan01.png',
 			house2: 'images/housePlan02.png',
 			house3: 'images/housePlan03.png',
-			pool: 'images/pool.jpg',
+			pool: 'images/pool.png',
 			car1: 'images/car1.gif',
 			car2: 'images/car2.gif',
 			car3: 'images/car3.gif',
@@ -598,24 +598,24 @@ App.GardenDesigner = function(){
 		var dataUrl = $('canvas')[0].toDataURL('image/png');
 
 		$.ajax({
-			// xhr: function(){
-			//   var xhr = new window.XMLHttpRequest();
-			//   var $progressbar = $('#progressbar');
-			//   var percent = 0;
+			xhr: function(){
+			  var xhr = new window.XMLHttpRequest();
+			  var $progressbar = $('#progressbar');
+			  var percent = 0;
 			  
-			//   // Прогресс загрузки
-			//   xhr.upload.addEventListener("progress", function(evt){ 
-			//   	// Округление до целых
-			//   	percent = ~~(evt.loaded/evt.total*100);
-			//   	$progressbar.val(percent);
-			//   }, false);
+			  // Прогресс загрузки
+			  xhr.upload.addEventListener("progress", function(evt){ 
+			  	// Округление до целых
+			  	percent = ~~(evt.loaded/evt.total*100);
+			  	$progressbar.val(percent);
+			  }, false);
 
-			//   // xhr.addEventListener("load", function(evt){
-			//   	// $progressbar.val(0);	
-			//   // }, false);
+			  xhr.addEventListener("load", function(evt){
+			  	$progressbar.val(0);	
+			  }, false);
 				
-			//   return xhr;
-			// },
+			  return xhr;
+			},
 			url: '/upload',
 			type: 'POST',
 			contentType: 'application/json',
@@ -627,7 +627,7 @@ App.GardenDesigner = function(){
 				a.download = 'Image.png';
 				a.href = url;
 				a.click();
-					// $('#progressDialog').hide();
+					$('#progressDialog').hide();
 			},
 			error: function(err){
 				console.log('Error while saving image');

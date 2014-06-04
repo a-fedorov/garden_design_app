@@ -8,12 +8,6 @@ var morgan  = require('morgan')
 // Компактный вид лога
 app.use(morgan('short'));
 
-var port = process.env.PORT || 3000;
-app.listen(port, function(){
-  console.log('Listening localhost on ' + port);  
-});
-
-
 // Установка максимального размера JSON файла
 app.use(bodyParser.json({limit: '10mb'}));
 app.use(bodyParser());
@@ -21,12 +15,16 @@ app.use(bodyParser());
 // Загрузка всех статических файлов из каталога public
 app.use(express.static(__dirname + '/public'));
 
+var port = process.env.PORT || 3000;
+app.listen(port, function(){
+  console.log('Listening localhost on ' + port + '\n');  
+});
+
 // Извлечение из JSON содержимого изображения
 function parseDataURL(body) {
   var match = /data:([^;]+);base64,(.*)/.exec(body);
-  if(!match)
-    return null;
-
+  if(!match) { return null; }
+  
   // Выделение заголовка и тела изображения
   return {
     contentType: match[1],
@@ -38,9 +36,7 @@ function parseDataURL(body) {
 app.post('/upload', function (req, res) {
   // console.log(req.get('host'));
   var upload = parseDataURL(req.body.data);
-	if (upload) {
-		console.log('Server get image data');
-	}
+	if (upload) { console.log('Server get image data'); }
 
   var fileName = 'temp.png';
   var url = req.protocol + '://' + req.get('host') + '/' + fileName;

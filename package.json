@@ -1,5 +1,5 @@
 {
-  "name": "garden_design_app",
+  "name": "garden-design-app",
   "version": "0.0.0",
   "description": "",
   "main": "server.js",
@@ -16,10 +16,5 @@
   "bugs": {
     "url": "https://github.com/prehtigiar/garden_design_app/issues"
   },
-  "homepage": "https://github.com/prehtigiar/garden_design_app",
-  "dependencies": {
-    "body-parser": "*",
-    "express": "*",
-    "morgan": "*"
-  }
+  "homepage": "https://github.com/prehtigiar/garden_design_app"
 }

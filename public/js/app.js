@@ -638,7 +638,7 @@ App.GardenDesigner = function(){
       type: 'POST',
       contentType: 'application/json',
       dataType: 'json',
-      data:  JSON.strinpngy({data: dataUrl}),
+      data:  JSON.stringify({data: dataUrl}),
       success: function(url){
         console.log('Image was saved to local drive.');
         var a = document.createElement('a');

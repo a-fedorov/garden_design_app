@@ -18,8 +18,8 @@
   },
   "homepage": "https://github.com/prehtigiar/garden_design_app",
   "dependencies": {
-    "body-parser": "^1.6.5",
+    "body-parser": "*",
     "express": "*",
-    "morgan": "^1.2.3"
+    "morgan": "*"
   }
 }
